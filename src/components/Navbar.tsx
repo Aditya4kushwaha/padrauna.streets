@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Galaxy from "./Galaxy";
 
 interface NavbarProps {
   scrollToSection: (id: string) => void;
@@ -18,21 +19,31 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection }) => {
 
   const handleClick = (id: string) => {
     scrollToSection(id);
-    setIsMenuOpen(false); // close mobile menu on click
+    setIsMenuOpen(false);
   };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
+      {/* Galaxy background for navbar */}
+      <div className="absolute inset-0 -z-10 opacity-60">
+        <Galaxy
+          mouseRepulsion={false}
+          mouseInteraction={false}
+          density={0.8}
+          glowIntensity={0.3}
+          saturation={0.5}
+          hueShift={200}
+        />
+      </div>
+
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
         <a
           href="/"
-          className="text-2xl font-bold text-white hover:text-sky-400 transition-all hover:scale-105"
+          className="text-2xl font-bold cursor-pointer text-white hover:text-sky-400 transition-all hover:scale-105"
         >
           padrauna.streets
         </a>
 
-        {/* Desktop Navbar */}
         <nav className="hidden md:flex space-x-6 items-center">
           {navLinks.map((link) => (
             <button
@@ -45,7 +56,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection }) => {
           ))}
         </nav>
 
-        {/* Mobile Menu Icon */}
         <div className="md:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -56,7 +66,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection }) => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-black/90 py-4 animate-in slide-in-from-top-2 duration-200">
           <nav className="flex flex-col items-center space-y-4">
