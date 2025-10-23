@@ -1,5 +1,5 @@
 import React from "react";
-import { Instagram, Youtube, Facebook, Mail } from "lucide-react";
+import { Instagram, Youtube, Facebook, FileText } from "lucide-react";
 import { FaTwitter } from "react-icons/fa";
 
 const ContactAndFooter: React.FC = () => (
@@ -9,7 +9,7 @@ const ContactAndFooter: React.FC = () => (
         Connect with us on <span className="text-sky-400">social media</span>
       </h2>
 
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
         {[
           { 
             icon: <Instagram className="text-pink-500" />, 
@@ -30,16 +30,16 @@ const ContactAndFooter: React.FC = () => (
             color: "hover:border-blue-500"
           },
           { 
-            icon: <Mail className="text-green-500" />, 
-            label: "Email", 
-            link: "mailto:mystreets16@gmail.com",
-            color: "hover:border-green-500"
+            icon: <FileText className="text-purple-500" />, 
+            label: "Contact us", 
+            link: "https://forms.gle/YOUR_GOOGLE_FORM_ID", // Replace with your actual form link
+            color: "hover:border-purple-500"
           },
         ].map((item, i) => (
           <a
             key={i}
             href={item.link}
-            target={item.link.startsWith('mailto:') ? '_self' : '_blank'}
+            target="_blank"
             rel="noopener noreferrer"
             className={`p-6 rounded-2xl border border-gray-700 ${item.color} text-center hover:scale-105 transition-all block`}
           >

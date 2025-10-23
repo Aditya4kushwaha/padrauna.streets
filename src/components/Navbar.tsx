@@ -9,11 +9,11 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "services", label: "Services" },
-    { href: "work", label: "My Work" },
-    { href: "reels", label: "Reels" },
-    { href: "team", label: "Team" },
-    { href: "contact", label: "Contact" },
+    { href: "services", label: "Services", color: "hover:text-sky-400" },
+    { href: "work", label: "My Work", color: "hover:text-sky-400" },
+    { href: "team", label: "Team", color: "hover:text-sky-400" },
+    { href: "reels", label: "Reels", color: "hover:text-sky-400" },
+    { href: "contact", label: "Contact", color: "hover:text-sky-400" },
   ];
 
   const handleClick = (id: string) => {
@@ -27,7 +27,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection }) => {
         {/* Logo */}
         <a
           href="/"
-          className="text-2xl font-bold text-white hover:text-sky-400 transition-colors hover:scale-105"
+          className="text-2xl font-bold text-white hover:text-sky-400 transition-all hover:scale-105"
         >
           padrauna.streets
         </a>
@@ -38,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection }) => {
             <button
               key={link.href}
               onClick={() => handleClick(link.href)}
-              className="text-gray-300 hover:text-white transition-colors hover:-translate-y-1"
+              className={`text-gray-300 ${link.color} transition-all hover:-translate-y-1`}
             >
               {link.label}
             </button>
@@ -47,7 +47,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection }) => {
 
         {/* Mobile Menu Icon */}
         <div className="md:hidden">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white hover:text-sky-400 transition-colors">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-white hover:text-sky-400 transition-colors"
+          >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -61,7 +64,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection }) => {
               <button
                 key={link.href}
                 onClick={() => handleClick(link.href)}
-                className="text-gray-300 hover:text-white transition-colors"
+                className={`text-gray-300 ${link.color} transition-colors`}
               >
                 {link.label}
               </button>
