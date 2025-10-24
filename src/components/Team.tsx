@@ -19,37 +19,55 @@ const Team: React.FC = () => {
       img: alok,
       insta: "https://www.instagram.com/itz_alok_r15/?igsh=dXJqZ3Z5ODg1NHQz#",
       phone: "+918009746098",
-      bio: "Alok is behind our creative and amazing video that we see on our page.",
+      bio: "Alok is behind our creative and amazing videos that bring our vision to life.",
     },
   ];
 
   return (
-    <section id="team" className="py-20">
+    <section id="team" className="py-20 bg-black text-white">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
         Meet Our <span className="text-sky-400">Team</span>
       </h2>
 
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-6 sm:px-10 lg:px-20">
         {members.map((m, i) => (
           <div
             key={i}
-            className="flex flex-col md:flex-row items-center border border-gray-700 rounded-xl p-8 gap-8 hover:border-sky-500 transition-colors"
+            className="flex flex-col md:flex-row lg:flex-row items-center lg:items-start border border-gray-700 rounded-2xl p-6 sm:p-8 gap-6 sm:gap-8 hover:border-sky-500 transition-colors bg-gray-900/40"
           >
-            <img
-              src={m.img}
-              alt={m.name}
-              className="w-48 h-48 rounded-full border-4 border-sky-500 object-cover"
-            />
-            <div className="text-center md:text-left">
-              <h3 className="text-3xl font-bold">{m.name}</h3>
-              <p className="text-sky-400 mb-2">{m.title}</p>
-              <p className="text-gray-300">{m.bio}</p>
+            {/* Image */}
+            <div className="flex-shrink-0">
+              <img
+                src={m.img}
+                alt={m.name}
+                className="w-40 h-40 sm:w-44 sm:h-44 lg:w-48 lg:h-48 rounded-full border-4 border-sky-500 object-cover"
+              />
+            </div>
+
+            {/* Info */}
+            <div className="text-center md:text-left mt-4 md:mt-0 flex-1">
+              <h3 className="text-2xl sm:text-3xl font-bold">{m.name}</h3>
+              <p className="text-sky-400 mb-2 text-base sm:text-lg">
+                {m.title}
+              </p>
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                {m.bio}
+              </p>
+
               <div className="flex gap-4 mt-4 justify-center md:justify-start">
-                <a href={m.insta} target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition-colors">
-                  <Instagram className="text-pink-500" />
+                <a
+                  href={m.insta}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-pink-400 transition-colors"
+                >
+                  <Instagram className="w-6 h-6 text-pink-500" />
                 </a>
-                <a href={`tel:${m.phone}`} className="hover:text-green-400 transition-colors">
-                  <Phone className="text-green-500" />
+                <a
+                  href={`tel:${m.phone}`}
+                  className="hover:text-green-400 transition-colors"
+                >
+                  <Phone className="w-6 h-6 text-green-500" />
                 </a>
               </div>
             </div>
