@@ -1,5 +1,5 @@
 import React from "react";
-import { Instagram, Youtube, Facebook, FileText } from "lucide-react";
+import { Instagram, Youtube, Facebook, FileText, Globe } from "lucide-react";
 import { FaTwitter } from "react-icons/fa";
 
 const ContactAndFooter: React.FC = () => (
@@ -32,7 +32,7 @@ const ContactAndFooter: React.FC = () => (
           { 
             icon: <FileText className="text-purple-500" />, 
             label: "Contact us", 
-            link: "https://forms.gle/YOUR_GOOGLE_FORM_ID", // Replace with your actual form link
+            link: "https://forms.gle/peHUZEUGWM54xdkdA",
             color: "hover:border-purple-500"
           },
         ].map((item, i) => (
@@ -53,14 +53,31 @@ const ContactAndFooter: React.FC = () => (
     <footer className="border-t border-gray-800 mt-20 py-6">
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-center">
         <p className="text-gray-400 text-sm mb-3 md:mb-0">
-          Made with <span className="text-red-500">❤️</span> by <span className="text-white font-medium">AdityaXdev</span>
+          Made with <span className="text-red-500">❤️</span> by{" "}
+          <span className="text-white font-medium">AdityaXdev</span>
         </p>
+
         <p className="text-gray-400 text-sm mb-3 md:mb-0">
           <span className="text-sky-400">© padrauna.streets</span> All rights reserved.
         </p>
-        <a href="https://x.com/adityakush_04" target="_blank" className="text-gray-400 hover:text-sky-400 transition-colors">
-          <FaTwitter className="text-lg" />
-        </a>
+
+        <div className="flex items-center gap-3 text-gray-400">
+          <span className="text-sm text-gray-400">Connect with me:</span>
+          <a
+            href="https://x.com/adityakush_04"
+            target="_blank"
+            className="hover:text-sky-400 transition-colors"
+          >
+            <FaTwitter className="text-lg" />
+          </a>
+          <a
+            href="https://portfolio-rose-three-24.vercel.app/"
+            target="_blank"
+            className="hover:text-sky-400 transition-colors"
+          >
+            <Globe className="w-5 h-5" />
+          </a>
+        </div>
       </div>
     </footer>
   </>

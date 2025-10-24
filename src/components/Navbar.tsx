@@ -12,8 +12,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection }) => {
   const navLinks = [
     { href: "services", label: "Services", color: "hover:text-sky-400" },
     { href: "work", label: "My Work", color: "hover:text-sky-400" },
-    { href: "team", label: "Team", color: "hover:text-sky-400" },
     { href: "reels", label: "Reels", color: "hover:text-sky-400" },
+    { href: "team", label: "Team", color: "hover:text-sky-400" },
     { href: "contact", label: "Contact", color: "hover:text-sky-400" },
   ];
 
@@ -67,7 +67,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection }) => {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-black/90 py-4 animate-in slide-in-from-top-2 duration-200">
+        <div className="md:hidden py-4 animate-in slide-in-from-top-2 duration-200">
           <nav className="flex flex-col items-center space-y-4">
             {navLinks.map((link) => (
               <button
