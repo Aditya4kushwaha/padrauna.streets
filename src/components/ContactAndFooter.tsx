@@ -62,7 +62,7 @@ const ContactAndFooter: React.FC = () => (
         </p>
 
         <div className="flex items-center gap-3 text-gray-400">
-          <span className="text-sm text-gray-400">Connect with me:</span>
+          <span className="text-sm text-gray-400">Connect with me :</span>
           <a
             href="https://x.com/adityakush_04"
             target="_blank"

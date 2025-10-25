@@ -1,5 +1,6 @@
 import React from "react";
 import Galaxy from "./Galaxy";
+import { FileText } from "lucide-react"; // ✅ Import the icon
 
 interface HeroProps {
   scrollToSection: (id: string) => void;
@@ -29,14 +30,29 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection, Button }) => (
       Specializing in high impact video editing and local promotions that connect with your audience.
       Let's tell your story.
     </p>
-    <div>
-      <Button
-        size="lg"
-        onClick={() => scrollToSection("contact")}
-        className="bg-sky-500 cursor-pointer hover:bg-sky-600 text-lg rounded-full px-8 py-6 transition-colors"
-      >
-        Let's Collaborate
-      </Button>
+
+    <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+      {/* Let's Collaborate Button */}
+<Button
+  onClick={() => scrollToSection("contact")}
+  className="bg-sky-500 hover:bg-sky-600 text-sky-50 text-base font-medium rounded-full px-6 py-3 transition-all duration-300"
+>
+  Let's Collaborate
+</Button>
+
+
+      {/* Contact Us Button */}
+<a
+  href="https://forms.gle/peHUZEUGWM54xdkdA"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 border-2 border-purple-500 text-purple-400 hover:bg-purple-500/10 hover:shadow-[0_0_12px_rgba(168,85,247,0.4)] px-6 py-3 rounded-full text-base font-medium transition-all duration-300"
+>
+  <FileText className="text-purple-500 w-5 h-5" />
+  <span>Contact Us</span>
+</a>
+
+
     </div>
   </section>
 );
